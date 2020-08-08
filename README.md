@@ -1,2 +1,2 @@
 # Marie
-Ayudar a vendedores ambulantes en un parque de la manera más fácil con el Algoritmo A*.
+Ayudar a vendedores ambulantes en un parque con el Algoritmo A* para llegar a sus clientes de la forma más rápida.
