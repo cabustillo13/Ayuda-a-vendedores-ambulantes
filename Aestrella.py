@@ -1,4 +1,4 @@
-import Funciones
+import Coordenadas, Data
 
 class Node():
 
@@ -6,8 +6,11 @@ class Node():
         self.parent = parent
         self.position = position
 
+        #g -> Es la distancia entre el nodo actual y el nodo de inicio.
         self.g = 0
+        #h -> Es la heuristica: Distancia estimada desde el nodo actual hasta el nodo final.
         self.h = 0
+        #f -> Es el costo total del nodo
         self.f = 0
 
     def __eq__(self, other):
@@ -40,7 +43,7 @@ def aEstrella(maze, start, end):
                 current_node = item
                 current_index = index
 
-        # Pop current off open list, add to closed list
+        #Quitar nodo de la lista abierta y pasa a la lista cerrada
         open_list.pop(current_index)
         closed_list.append(current_node)
 
@@ -51,11 +54,11 @@ def aEstrella(maze, start, end):
             while current is not None:
                 path.append(current.position)
                 current = current.parent
-            return path[::-1] # Return reversed path
+            return path[::-1] #Devuelve el path inverso
 
         #Generar los hijos
         children = []
-        for new_position in [(0, -1), (0, 1), (-1, 0), (1, 0), (-1, -1), (-1, 1), (1, -1), (1, 1)]: # Adjacent squares
+        for new_position in [(0, -1), (0, 1), (-1, 0), (1, 0), (-1, -1), (-1, 1), (1, -1), (1, 1)]: #Cuadrados Adyacentes
 
             #Obtener la posicion del nodo
             node_position = (current_node.position[0] + new_position[0], current_node.position[1] + new_position[1])
@@ -74,7 +77,7 @@ def aEstrella(maze, start, end):
             #Append
             children.append(new_node)
 
-        # Loop through children
+        # Loop a traves de los nodos hijo
         for child in children:
 
             #El nodo hijo esta en la lista closed
@@ -95,41 +98,5 @@ def aEstrella(maze, start, end):
             #Agregar el nodo hijo a la lista open
             open_list.append(child)
 
-
-def main():
-
-    matriz = Funciones.crearCuadricula(10,10)
-    
-    matriz = Funciones.obstaculo(0,4,matriz)
-    matriz = Funciones.obstaculo(1,4,matriz)
-    matriz = Funciones.obstaculo(2,4,matriz)
-    matriz = Funciones.obstaculo(3,4,matriz)
-    matriz = Funciones.obstaculo(4,4,matriz)
-    
-    matriz = Funciones.obstaculo(6,4,matriz)
-    matriz = Funciones.obstaculo(7,4,matriz)
-    matriz = Funciones.obstaculo(8,4,matriz)
-    
-    #matriz = [[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            #[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            #[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            #[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            #[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            #[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            #[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            #[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            #[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            #[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
-
-    start = (0, 0)
-    end = (7, 6)
-
-    path = aEstrella(matriz, start, end)
-    print(path)
-
-
-if __name__ == '__main__':
-    main()
-    
 
 #Bibliografia: https://medium.com/@nicholas.w.swift/easy-a-star-pathfinding-7e6689c7f7b2
