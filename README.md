@@ -70,3 +70,8 @@ En la realidad cuando esta persona se desplace a lo largo de la plaza puede que 
 No. A menos que realmente lo vayas a utilizar en tu vida diaria, porque es bastante engorroso la forma de cargar los datos de las casillas "caminables". Pero sí estás dispuesto a hacer ésto, bienvenido sea.
 
 **¡Ojalá te sirva este código!**
+
+## Imágenes
+
+* Imagen Plaza Independencia: ![Ver](https://www.serargentino.com/turismo/mendoza/la-ciudad-de-5-plazas )
+* La imagen de inicio del vendedor fue obtenida de Pixabay. La licencia ampara: gratis para usos comerciales y no es necesario reconocimiento.
