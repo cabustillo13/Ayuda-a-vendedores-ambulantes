@@ -73,5 +73,5 @@ No. A menos que realmente lo vayas a utilizar en tu vida diaria, porque es basta
 
 ## Imágenes
 
-* Imagen Plaza Independencia: ![Ver](https://www.serargentino.com/turismo/mendoza/la-ciudad-de-5-plazas )
+* Imagen Plaza Independencia: [Ver](https://www.serargentino.com/turismo/mendoza/la-ciudad-de-5-plazas )
 * La imagen de inicio del vendedor fue obtenida de Pixabay. La licencia ampara: gratis para usos comerciales y no es necesario reconocimiento.
